@@ -40,7 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	// URL liberadas (Teste)
 	private static final String[] PUBLIC_MATCHERS = {
-			"/h2-console/**"
+			"/h2-console/**",
+			"/historico/**"
 	};
 
 	// URL GET Liberadas sem login

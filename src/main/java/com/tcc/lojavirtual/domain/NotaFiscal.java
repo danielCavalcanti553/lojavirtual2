@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
@@ -76,7 +78,7 @@ public class NotaFiscal implements Serializable {
 
 
 
-
+	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name="pedido_codigo_pedido")
 	private Pedido pedido;	

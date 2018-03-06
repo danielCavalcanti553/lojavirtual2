@@ -3,8 +3,6 @@ package com.tcc.lojavirtual.resource;
 import java.net.URI;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.tcc.lojavirtual.domain.Categoria;
 import com.tcc.lojavirtual.domain.Pedido;
-import com.tcc.lojavirtual.dto.CategoriaDTO;
+import com.tcc.lojavirtual.dto.PedidoDTO;
 import com.tcc.lojavirtual.service.PedidoService;
 
 @RestController
@@ -56,7 +53,7 @@ public class PedidoResource {
 	
 	// USE CASE: Visualizar Pedidos (Paginado)
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<Page<Pedido>> findPage(
+	public ResponseEntity<Page<PedidoDTO>> findPage(
 			@RequestParam(value="page", defaultValue="0") Integer page, 
 			@RequestParam(value="linesPage", defaultValue="24")Integer linesPage, 
 			@RequestParam(value="order", defaultValue="dataPedido")String order, 
@@ -64,7 +61,8 @@ public class PedidoResource {
 			){
 		
 		Page<Pedido> list = pedidoService.findPage(page, linesPage, order, direction);
-		return ResponseEntity.ok().body(list);
+		Page<PedidoDTO> listDto = list.map(obj -> new PedidoDTO(obj));
+		return ResponseEntity.ok().body(listDto);
 	}
 	
 }

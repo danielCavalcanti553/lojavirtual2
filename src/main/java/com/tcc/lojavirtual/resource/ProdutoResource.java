@@ -44,12 +44,12 @@ public class ProdutoResource {
 	}*/
 	
 	
-	// USE CASE: Visualizar Produtos
-	@RequestMapping(value="/page",method=RequestMethod.GET)
+	// USE CASE: Visualizar Estoque Baixo
+	@RequestMapping(value="/estoque",method=RequestMethod.GET)
 	public ResponseEntity<Page<Produto>> findPage(
 			@RequestParam(value="page", defaultValue="0") Integer page, 
-			@RequestParam(value="linesPage", defaultValue="24")Integer linesPage, 
-			@RequestParam(value="order", defaultValue="nomeProduto")String order, 
+			@RequestParam(value="linesPage", defaultValue="12")Integer linesPage, 
+			@RequestParam(value="order", defaultValue="quantidadeEstoque")String order, 
 			@RequestParam(value="direction", defaultValue="ASC")String direction
 			){
 		
