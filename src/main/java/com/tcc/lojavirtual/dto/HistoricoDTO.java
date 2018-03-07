@@ -1,6 +1,7 @@
 package com.tcc.lojavirtual.dto;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -13,8 +14,8 @@ public class HistoricoDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@JsonFormat(pattern="dd/mm/yyyy hh:mm")
-	private Date data;
+	private String data;
+	
 	private Integer quantidade;
 	private String tipo;
 	private Integer produtoId;
@@ -28,17 +29,18 @@ public class HistoricoDTO implements Serializable{
 	}
 	public HistoricoDTO(Historico hist) {
 		super();
-		this.data = hist.getData();
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+		this.data = formato.format(hist.getData());
 		this.quantidade = hist.getQuantidade();
 		this.tipo = TipoHistorico.toEnum(hist.getTipo()).getDescricao();
 		this.produtoId = hist.getProduto().getCodigoProduto();
 		this.produto = hist.getProduto().getNomeProduto();
 		
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public Integer getQuantidade() {

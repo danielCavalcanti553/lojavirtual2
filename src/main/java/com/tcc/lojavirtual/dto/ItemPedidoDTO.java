@@ -3,21 +3,18 @@ package com.tcc.lojavirtual.dto;
 import java.io.Serializable;
 
 import com.tcc.lojavirtual.domain.ItemPedido;
+import com.tcc.lojavirtual.domain.Produto;
 
 public class ItemPedidoDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private Integer quantidade;
-	private Double preco;
-	private Integer codigoProduto;
-	private String nomeProduto;
+	private Produto produto;
 	
 	public ItemPedidoDTO(ItemPedido obj) {
 		super();
 		this.quantidade = obj.getQuantidade();
-		this.preco = obj.getPreco();
-		this.codigoProduto = obj.getProduto().getCodigoProduto();
-		this.nomeProduto = obj.getProduto().getNomeProduto();
+		this.setProduto(obj.getProduto());
 	}
 
 	public ItemPedidoDTO() {
@@ -32,31 +29,14 @@ public class ItemPedidoDTO implements Serializable{
 		this.quantidade = quantidade;
 	}
 
-	public Double getPreco() {
-		return preco;
+	public Produto getProduto() {
+		return produto;
 	}
 
-	public void setPreco(Double preco) {
-		this.preco = preco;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 
-	public Integer getCodigoProduto() {
-		return codigoProduto;
-	}
-
-	public void setCodigoProduto(Integer codigoProduto) {
-		this.codigoProduto = codigoProduto;
-	}
-
-	public String getNomeProduto() {
-		return nomeProduto;
-	}
-
-	public void setNomeProduto(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
-	}
-	
-	
 	
 	
 }

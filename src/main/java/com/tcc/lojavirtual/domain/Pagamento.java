@@ -22,7 +22,7 @@ public class Pagamento implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)		
 	private Integer codigoPagamento;
 	
-	@JsonFormat(pattern="dd/mm/yyyy hh:mm")
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private Date dataPagamento;
 	
 	private String numeroCartao;

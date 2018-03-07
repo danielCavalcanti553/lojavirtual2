@@ -58,44 +58,33 @@ public class ProfileTestDados{
 
 	public void insereDados() throws Exception {
 		
-		Categoria cat1 = new Categoria(null,"Eletrodoméstivos");
-		Categoria cat2 = new Categoria(null,"Informática");
-		Categoria cat3 = new Categoria(null,"Móveis");
-		Categoria cat4 = new Categoria(null,"Came, mesa e banho");
-		Categoria cat5 = new Categoria(null,"Celulares");
-		Categoria cat6 = new Categoria(null,"Eletrônicos");
-		Categoria cat7 = new Categoria(null,"Escritório");
+		Categoria cat1 = new Categoria(null,"Acessórios");
+		Categoria cat6 = new Categoria(null,"Iluminação");
+		Categoria cat7 = new Categoria(null,"Motor");
 		
-		Produto pro1 = new Produto(null,"Computador",3,200.00);
-		Produto pro2 = new Produto(null,"Liquidificador",3,200.00);
-		Produto pro3 = new Produto(null,"Celular Samsung",3,200.00);
-		Produto pro4 = new Produto(null,"SmartTV",3,200.00);
-		Produto pro5 = new Produto(null,"Ventilador",3,200.00);
-		Produto pro6 = new Produto(null,"Guarda Roupa",3,200.00);
-		Produto pro7 = new Produto(null,"Travesseiro",3,200.00);
-		Produto pro8 = new Produto(null,"Cadeira Giratória",3,200.00);
-		Produto pro9 = new Produto(null,"Celular LG",3,200.00);
-		Produto pro10 = new Produto(null,"Poltrona",3,200.00);
-	
-		Produto p12 = new Produto(null, "Produto 12",3, 10.00);
-		Produto p13 = new Produto(null, "Produto 13",3, 10.00);
-		Produto p14 = new Produto(null, "Produto 14",3, 10.00);
-		Produto p15 = new Produto(null, "Produto 15",3, 10.00);
-		Produto p16 = new Produto(null, "Produto 16",3, 10.00);
-		Produto p17 = new Produto(null, "Produto 17",3, 10.00);
-		Produto p18 = new Produto(null, "Produto 18",3, 10.00);
-		Produto p19 = new Produto(null, "Produto 19",3, 10.00);
-		Produto p20 = new Produto(null, "Produto 20",3, 10.00);
-		Produto p21 = new Produto(null, "Produto 21",3, 10.00);
-		Produto p22 = new Produto(null, "Produto 22",3, 10.00);
-		Produto p23 = new Produto(null, "Produto 23",3, 10.00);
-		Produto p24 = new Produto(null, "Produto 24",3, 10.00);
-		Produto p25 = new Produto(null, "Produto 25",3, 10.00);
-		Produto p26 = new Produto(null, "Produto 26",3, 10.00);
-		Produto p27 = new Produto(null, "Produto 27",3, 10.00);
-		Produto p28 = new Produto(null, "Produto 28",3, 10.00);
-		Produto p29 = new Produto(null, "Produto 29",3, 10.00);
-		Produto p30 = new Produto(null, "Produto 30",3, 10.00);
+
+
+		
+		Produto pro1 = new Produto(null,"Amplificador",3,200.00);
+		Produto p12 = new Produto(null, "Auto Radio",3, 10.00);
+		Produto p13 = new Produto(null, "Calha de Chuva",3, 10.00);
+		Produto p14 = new Produto(null, "Capa Azul para Banco",3, 10.00);
+		Produto p15 = new Produto(null, "Capa Cinza para banco",3, 10.00);
+		Produto p16 = new Produto(null, "Capa para Retrovisor",3, 10.00);
+		Produto p17 = new Produto(null, "Capa amarela para volante ",3, 10.00);
+		Produto p18 = new Produto(null, "Capa azul para volante",3, 10.00);
+		Produto p19 = new Produto(null, "Capa vermelho para volante",3, 10.00);
+		Produto p20 = new Produto(null, "Coifa para marcha",3, 10.00);
+		Produto p21 = new Produto(null, "Espelho retrovisor",3, 10.00);
+		Produto p22 = new Produto(null, "Espelho retrovisor estacionamento",3, 10.00);
+		Produto p23 = new Produto(null, "Limpador de Parabrisa",3, 10.00);
+		Produto p24 = new Produto(null, "Macaco Automotivo",3, 10.00);
+		Produto p25 = new Produto(null, "Porta Celular",3, 10.00);
+		Produto p26 = new Produto(null, "Porta Celular",3, 10.00);
+		Produto p27 = new Produto(null, "Porta Copo",3, 10.00);
+		Produto p28 = new Produto(null, "Suporte de Celular",3, 10.00);
+		Produto p29 = new Produto(null, "Tapete Colorido",3, 10.00);
+		Produto p30 = new Produto(null, "Tapete Comum",3, 10.00);
 		Produto p31 = new Produto(null, "Produto 31",3, 10.00);
 		Produto p32 = new Produto(null, "Produto 32",3, 10.00);
 		Produto p33 = new Produto(null, "Produto 33",3, 10.00);
@@ -117,29 +106,10 @@ public class ProfileTestDados{
 		Produto p49 = new Produto(null, "Produto 49",3, 10.00);
 		Produto p50 = new Produto(null, "Produto 50",3, 10.00);
 		
-		
-		cat1.getProdutos().addAll(Arrays.asList(pro1));
-		cat2.getProdutos().addAll(Arrays.asList(pro2));
-		cat3.getProdutos().addAll(Arrays.asList(pro2,pro6,pro10));
-		cat4.getProdutos().addAll(Arrays.asList(pro7));
-		cat5.getProdutos().addAll(Arrays.asList(pro9,pro3));
-		cat6.getProdutos().addAll(Arrays.asList(pro4,pro5));
-		cat7.getProdutos().addAll(Arrays.asList(pro8));
-
-		cat1.getProdutos().addAll(Arrays.asList(p12, p13, p14, p15, p16, p17, p18, p19, p20,
+		cat1.getProdutos().addAll(Arrays.asList(pro1,p12, p13, p14, p15, p16, p17, p18, p19, p20,
 				p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p34, p35, p36, p37, p38,
-				p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50));
+				p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50));	
 		
-		pro1.getCategorias().addAll(Arrays.asList(cat1));
-		pro2.getCategorias().addAll(Arrays.asList(cat2,cat3));
-		pro3.getCategorias().addAll(Arrays.asList(cat5));
-		pro4.getCategorias().addAll(Arrays.asList(cat6));
-		pro5.getCategorias().addAll(Arrays.asList(cat6));
-		pro6.getCategorias().addAll(Arrays.asList(cat3));
-		pro7.getCategorias().addAll(Arrays.asList(cat4));
-		pro9.getCategorias().addAll(Arrays.asList(cat5));
-		pro8.getCategorias().addAll(Arrays.asList(cat7));
-		pro10.getCategorias().addAll(Arrays.asList(cat3));
 		p12.getCategorias().add(cat1);
 		p13.getCategorias().add(cat1);
 		p14.getCategorias().add(cat1);
@@ -181,8 +151,42 @@ public class ProfileTestDados{
 		p50.getCategorias().add(cat1);
 		
 		
-		categoriaRepository.save(Arrays.asList(cat1,cat2,cat3,cat4,cat5,cat6,cat7));
-		produtoRepository.save(Arrays.asList(pro1,pro2,pro3,pro4,pro5,pro6,pro7,pro8,pro9,pro10));
+		
+		
+		Produto pro2 = new Produto(null,"Farol Corola",3,200.00);
+		Produto pro3 = new Produto(null,"Farol Corsa",3,200.00);
+		Produto pro4 = new Produto(null,"Farol Golf",3,200.00);
+		Produto pro5 = new Produto(null,"Farol Scenic",3,200.00);
+		cat6.getProdutos().addAll(Arrays.asList(pro2,pro3,pro4,pro5));
+		pro2.getCategorias().addAll(Arrays.asList(cat6));
+		pro3.getCategorias().addAll(Arrays.asList(cat6));
+		pro4.getCategorias().addAll(Arrays.asList(cat6));
+		pro5.getCategorias().addAll(Arrays.asList(cat6));
+				
+		Produto pro6 = new Produto(null,"Motor Parcial Ranger",3,200.00);
+		Produto pro7 = new Produto(null,"Motor Parcial GM",3,200.00);
+		Produto pro8 = new Produto(null,"Motor Parcial Meriva",3,200.00);
+		Produto pro9 = new Produto(null,"Motor Parcial Vectra",3,200.00);
+		cat7.getProdutos().addAll(Arrays.asList(pro6,pro7,pro8,pro9));
+		pro6.getCategorias().addAll(Arrays.asList(cat7));
+		pro7.getCategorias().addAll(Arrays.asList(cat7));
+		pro8.getCategorias().addAll(Arrays.asList(cat7));
+		pro9.getCategorias().addAll(Arrays.asList(cat7));
+
+		
+		
+
+
+
+
+
+		
+
+		
+		
+		
+		categoriaRepository.save(Arrays.asList(cat1,cat6,cat7));
+		produtoRepository.save(Arrays.asList(pro1,pro2,pro3,pro4,pro5,pro6,pro7,pro8,pro9));
 		produtoRepository.save(Arrays.asList(p12, p13, p14, p15, p16, p17, p18, p19, p20,
 				p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p34, p35, p36, p37, p38,
 				p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50));	
@@ -217,7 +221,7 @@ public class ProfileTestDados{
 		ped2.setNotaFiscal(not2);
 
 		
-		Pagamento pag1 = new Pagamento(null, new Date(), "1234123412341234", 10000, ped1);
+		Pagamento pag1 = new Pagamento(null, new Date(), "1234123412341234", 1000, ped1);
 		ped1.setPagamento(pag1);
 		Pagamento pag2 = new Pagamento(null, new Date(), "1234123412341234", 500, ped2);
 		ped2.setPagamento(pag2);

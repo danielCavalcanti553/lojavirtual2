@@ -1,11 +1,13 @@
 package com.tcc.lojavirtual.dto;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.tcc.lojavirtual.domain.Pagamento;
 import com.tcc.lojavirtual.domain.Pedido;
 
 public class PedidoDTO implements Serializable{
@@ -13,20 +15,20 @@ public class PedidoDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer codigoPedido;
-	@JsonFormat(pattern="dd/mm/yyyy hh:mm")
-	private Date dataPedido;
-	private String numeroCartaoPgto;
-	private Double valorPgto;
+	
+	
+	private String dataPedido;
+	private Pagamento pagamento;
 	private Long codigoNfe;
 	
 	private List<ItemPedidoDTO> itens;
 	
 	public PedidoDTO(Pedido obj) {
 		super();
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 		this.codigoPedido = obj.getCodigoPedido();
-		this.dataPedido = obj.getDataPedido();
-		this.numeroCartaoPgto = obj.getPagamento().getNumeroCartao();
-		this.valorPgto = obj.getPagamento().getValor();
+		this.dataPedido = formato.format(obj.getDataPedido()); 
+		this.setPagamento(obj.getPagamento());
 		this.codigoNfe = obj.getNotaFiscal().getNumeroNfe();
 		this.itens = obj.getItens().stream().map(x -> new ItemPedidoDTO(x)).collect(Collectors.toList());
 	}
@@ -43,29 +45,14 @@ public class PedidoDTO implements Serializable{
 		this.codigoPedido = codigoPedido;
 	}
 
-	public Date getDataPedido() {
+	public String getDataPedido() {
 		return dataPedido;
 	}
 
-	public void setDataPedido(Date dataPedido) {
+	public void setDataPedido(String dataPedido) {
 		this.dataPedido = dataPedido;
 	}
 
-	public String getNumeroCartaoPgto() {
-		return numeroCartaoPgto;
-	}
-
-	public void setNumeroCartaoPgto(String numeroCartaoPgto) {
-		this.numeroCartaoPgto = numeroCartaoPgto;
-	}
-
-	public Double getValorPgto() {
-		return valorPgto;
-	}
-
-	public void setValorPgto(Double valorPgto) {
-		this.valorPgto = valorPgto;
-	}
 
 	public Long getCodigoNfe() {
 		return codigoNfe;
@@ -81,6 +68,14 @@ public class PedidoDTO implements Serializable{
 
 	public void setItens(List<ItemPedidoDTO> itens) {
 		this.itens = itens;
+	}
+
+	public Pagamento getPagamento() {
+		return pagamento;
+	}
+
+	public void setPagamento(Pagamento pagamento) {
+		this.pagamento = pagamento;
 	}
 
 	
